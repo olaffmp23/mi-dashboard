@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { LineChart, Line, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
 
 // ─── HELPERS ────────────────────────────────────────────────────────────────
 const parseCSV = (text) => {
@@ -363,7 +363,6 @@ export default function FbAdsDashboard() {
     : [];
 
   const total = (key) => filtered.reduce((s, r) => s + num(r[colMap[key]]), 0);
-  const avg   = (key) => filtered.length ? total(key) / filtered.length : 0;
 
   const totalImp    = total("impressions");
   const totalReach  = total("reach");
